@@ -25,7 +25,7 @@ struct SearchView: View {
                             TextField("Etkinlik ara...", text: $searchText)
                                 .autocorrectionDisabled() 
                         }
-                        .padding(12)
+                        .padding(12)    
                         .background(Color(.systemGray6))
                         .clipShape(RoundedRectangle(cornerRadius: 14))
 

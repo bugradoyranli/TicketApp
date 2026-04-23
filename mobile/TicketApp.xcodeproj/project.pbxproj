@@ -8,6 +8,8 @@
 
 /* Begin PBXFileReference section */
 		7618D2952F699BA800AD0DDC /* TicketApp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = TicketApp.xcodeproj; sourceTree = "<group>"; };
+		762E051C2F8D5CC400F2D011 /* TicketApp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = TicketApp.xcodeproj; sourceTree = "<group>"; };
+		763574DB2F93A6AD008029DF /* TicketApp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = TicketApp.xcodeproj; sourceTree = "<group>"; };
 		764226C62F61ED37007C99B5 /* TicketApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TicketApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		768C29672F699834008B6D52 /* TicketApp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = TicketApp.xcodeproj; sourceTree = "<group>"; };
 		768C29AD2F69984C008B6D52 /* TicketApp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = TicketApp.xcodeproj; sourceTree = "<group>"; };
@@ -15,9 +17,22 @@
 		76E55D412F699866000B42B7 /* TicketApp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = TicketApp.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		763574F12F95467E008029DF /* Exceptions for "TicketApp" folder in "TicketApp" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				"TicketApp-Info.plist",
+			);
+			target = 764226C52F61ED37007C99B5 /* TicketApp */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		764226C82F61ED37007C99B5 /* TicketApp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				763574F12F95467E008029DF /* Exceptions for "TicketApp" folder in "TicketApp" target */,
+			);
 			name = TicketApp;
 			sourceTree = "<group>";
 		};
@@ -35,6 +50,16 @@
 
 /* Begin PBXGroup section */
 		7618D2972F699BA800AD0DDC /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		762E051E2F8D5CC400F2D011 /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		763574DD2F93A6AD008029DF /* Products */ = {
 			isa = PBXGroup;
 			name = Products;
 			sourceTree = "<group>";
@@ -135,6 +160,10 @@
 					ProjectRef = 768C29AD2F69984C008B6D52 /* TicketApp.xcodeproj */;
 				},
 				{
+					ProductGroup = 763574DD2F93A6AD008029DF /* Products */;
+					ProjectRef = 763574DB2F93A6AD008029DF /* TicketApp.xcodeproj */;
+				},
+				{
 					ProductGroup = 76AC38642F780111006E751F /* Products */;
 					ProjectRef = 76AC38622F780111006E751F /* TicketApp.xcodeproj */;
 				},
@@ -149,6 +178,10 @@
 				{
 					ProductGroup = 76E55D482F699866000B42B7 /* Products */;
 					ProjectRef = 76E55D412F699866000B42B7 /* TicketApp.xcodeproj */;
+				},
+				{
+					ProductGroup = 762E051E2F8D5CC400F2D011 /* Products */;
+					ProjectRef = 762E051C2F8D5CC400F2D011 /* TicketApp.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -307,6 +340,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "TicketApp-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -338,6 +372,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "TicketApp-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

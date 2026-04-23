@@ -74,7 +74,7 @@ struct FeaturedEventCard: View {
 }
 
 #Preview {
-    FeaturedEventCard(event: featuredEv ents[0])
+    FeaturedEventCard(event: featuredEvents[0])
         .padding()
 }
 

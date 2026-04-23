@@ -2,10 +2,17 @@ import SwiftUI
 
 
 struct ProfileView: View {
+    
+    @AppStorage("userName") var userName: String = "kullanici.adi"
+    
+    @AppStorage("userEmail") var userEmail: String = "email"
+        
+    @AppStorage("isLoggedIn") var isLoggedIn: Bool = false
     var body: some View {
+        
         NavigationStack {
             VStack(spacing: 20) {
-
+                
                 // --- Avatar ---
                 Circle()
                     .fill(Color.purple.opacity(0.15))
@@ -15,34 +22,39 @@ struct ProfileView: View {
                             .font(.system(size: 40))
                             .foregroundStyle(.purple)
                     )
-
-                Text("Kullanıcı Adı")
+                
+                Text(userName)
                     .font(.title2.bold())
-
-                Text("kullanici@email.com")
+                
+                Text(userName)
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
-
+                
                 Divider()
-
+                
                 
                 List {
                     Label("Hesap Bilgileri", systemImage: "person.circle")
                     Label("Bildirimler",     systemImage: "bell")
                     Label("Gizlilik",        systemImage: "lock")
                     Label("Yardım",          systemImage: "questionmark.circle")
-
                     
-                    Label("Çıkış Yap", systemImage: "arrow.right.circle")
-                        .foregroundStyle(.red)
+                    
+                    Button(role: .destructive) { // .destructive kırmızı tonu otomatik ayarlar
+                        print("tıkladım")
+                        isLoggedIn = false
+                    } label: {
+                        Label("Çıkış Yap", systemImage: "arrow.right.circle")
+                    }
+                    .listStyle(.insetGrouped)
                 }
-                .listStyle(.insetGrouped)
+                .navigationTitle("Profil")
             }
-            .navigationTitle("Profil")
         }
     }
+    
+    
 }
-
 #Preview {
     ProfileView()
 }

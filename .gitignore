@@ -1,8 +1,19 @@
+# macOS
 .DS_Store
-.env
-[Bb]in/
-[Ob]j/
-.vs/
-*.user
-.env
 
+# .NET Specific - Alt klasörleri de kapsaması için **/ eklendi
+**/[Bb]in/
+**/[Ob]j/
+**/.vs/
+*.user
+**/.env
+appsettings.Development.json
+**/obj/
+**/bin/
+
+
+# Xcode / iOS
+**/build/
+**/DerivedData/
+**/*.xcuserstate
+**/xcuserdata/

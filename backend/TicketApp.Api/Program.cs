@@ -1,5 +1,9 @@
 using Microsoft.EntityFrameworkCore;
 using TicketApp.Api.Data;
+
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 using Swashbuckle.AspNetCore.SwaggerGen;  // Bu satırı ekleyin
 using DotNetEnv; // Bu satırı ekleyin
 
@@ -14,6 +18,22 @@ builder.Services.AddControllers();
 
 builder.Services.AddDbContext<TicketAppDbContext>(options =>
     options.UseNpgsql(connectionString));
+
+builder.Services.AddScoped<IJwtService, JwtService>();
+
+// Ayrıca JWT doğrulamayı (Authentication) sisteme tanıt:
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options => {
+        options.TokenValidationParameters = new TokenValidationParameters {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            ValidIssuer = builder.Configuration["Jwt:Issuer"],
+            ValidAudience = builder.Configuration["Jwt:Audience"],
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
+        };
+    });
 
 var app = builder.Build();
 

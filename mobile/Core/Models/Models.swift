@@ -19,20 +19,32 @@ struct FeaturedEvent: Identifiable {
     let gradientColors: [Color]
 }
 
+struct SportTickets: Identifiable {
+   let id = UUID()
+    let name: String
+    let date:String
+    
+}
 
 
 // MARK: - Auth Responses
 
 struct LoginResponse: Codable {
     let message: String
+    let token: String
+    let user: UserData
+}
+
+struct UserData: Codable {
     let id: Int
-    let name: String
-    let email: String
+        let name: String
+        let surname: String
+        let email: String
 }
 
 struct UserResponse: Codable {
-    let id: Int
-    let name: String
-    let surname: String?
-    let email: String
+    let Id: Int
+    let Name: String
+    let Surname: String?
+    let Email: String
 }

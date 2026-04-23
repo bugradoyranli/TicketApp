@@ -1,17 +1,18 @@
 import SwiftUI
-
-// Uygulamanın başladığı yer.
-// @main ile işaretlenmiş struct, iOS'a "buradan başla" der.
-// body içinde WindowGroup, uygulamanın ana penceresini tanımlar.
-
-
-
 @main
 struct TicketAppApp: App {
+    // AppStorage sayesinde uygulama kapansa da bu değer saklanır
+    @AppStorage("isLoggedIn") var isLoggedIn: Bool = false
+    
     var body: some Scene {
         WindowGroup {
-          
-            MainTabView()
+            if isLoggedIn {
+                // Giriş başarılıysa kullanıcıyı ana sayfaya gönder
+                MainTabView()
+            } else {
+                // Giriş yapılmamışsa Login/Register ekranını göster
+                LoginView()
+            }
         }
     }
 }
