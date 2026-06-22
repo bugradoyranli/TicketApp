@@ -15,12 +15,12 @@ struct ProfileView: View {
                 
                 // --- Avatar ---
                 Circle()
-                    .fill(Color.purple.opacity(0.15))
+                    .fill(Color.bordo.opacity(0.15))
                     .frame(width: 90, height: 90)
                     .overlay(
                         Image(systemName: "person.fill")
                             .font(.system(size: 40))
-                            .foregroundStyle(.purple)
+                            .foregroundStyle(Color.bordo)
                     )
                 
                 Text(userName)

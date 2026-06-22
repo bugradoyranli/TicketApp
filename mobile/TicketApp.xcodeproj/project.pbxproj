@@ -7,14 +7,21 @@
 	objects = {
 
 /* Begin PBXFileReference section */
+		7605F2EA2FE7E42200EBC909 /* TicketApp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = TicketApp.xcodeproj; sourceTree = "<group>"; };
 		7618D2952F699BA800AD0DDC /* TicketApp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = TicketApp.xcodeproj; sourceTree = "<group>"; };
 		762E051C2F8D5CC400F2D011 /* TicketApp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = TicketApp.xcodeproj; sourceTree = "<group>"; };
 		763574DB2F93A6AD008029DF /* TicketApp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = TicketApp.xcodeproj; sourceTree = "<group>"; };
+		7637BC012FE88D110055AE66 /* TicketApp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = TicketApp.xcodeproj; sourceTree = "<group>"; };
 		764226C62F61ED37007C99B5 /* TicketApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TicketApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		766A39B62F9A6B6F0007010A /* TicketApp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = TicketApp.xcodeproj; sourceTree = "<group>"; };
 		768C29672F699834008B6D52 /* TicketApp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = TicketApp.xcodeproj; sourceTree = "<group>"; };
 		768C29AD2F69984C008B6D52 /* TicketApp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = TicketApp.xcodeproj; sourceTree = "<group>"; };
+		769803742F9B7D51004D9925 /* TicketApp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = TicketApp.xcodeproj; sourceTree = "<group>"; };
 		76AC38622F780111006E751F /* TicketApp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = TicketApp.xcodeproj; sourceTree = "<group>"; };
+		76D095042FB3BDFE00D38F1B /* TicketApp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = TicketApp.xcodeproj; sourceTree = "<group>"; };
+		76E4DFCA2F9A6E8600A50F49 /* TicketApp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = TicketApp.xcodeproj; sourceTree = "<group>"; };
 		76E55D412F699866000B42B7 /* TicketApp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = TicketApp.xcodeproj; sourceTree = "<group>"; };
+		76EFBC662FE93B3500759C33 /* TicketApp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = TicketApp.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -49,6 +56,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7605F2ED2FE7E42200EBC909 /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
 		7618D2972F699BA800AD0DDC /* Products */ = {
 			isa = PBXGroup;
 			name = Products;
@@ -60,6 +72,11 @@
 			sourceTree = "<group>";
 		};
 		763574DD2F93A6AD008029DF /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7637BC042FE88D110055AE66 /* Products */ = {
 			isa = PBXGroup;
 			name = Products;
 			sourceTree = "<group>";
@@ -80,6 +97,11 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		766A39B92F9A6B6F0007010A /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
 		768C29682F699834008B6D52 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -92,12 +114,32 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		769803772F9B7D51004D9925 /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
 		76AC38642F780111006E751F /* Products */ = {
 			isa = PBXGroup;
 			name = Products;
 			sourceTree = "<group>";
 		};
+		76D095072FB3BDFE00D38F1B /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		76E4DFCD2F9A6E8600A50F49 /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
 		76E55D482F699866000B42B7 /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		76EFBC692FE93B3500759C33 /* Products */ = {
 			isa = PBXGroup;
 			name = Products;
 			sourceTree = "<group>";
@@ -135,7 +177,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 2630;
-				LastUpgradeCheck = 2630;
+				LastUpgradeCheck = 2640;
 				TargetAttributes = {
 					764226C52F61ED37007C99B5 = {
 						CreatedOnToolsVersion = 26.3;
@@ -156,24 +198,20 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 768C29B02F69984C008B6D52 /* Products */;
-					ProjectRef = 768C29AD2F69984C008B6D52 /* TicketApp.xcodeproj */;
-				},
-				{
 					ProductGroup = 763574DD2F93A6AD008029DF /* Products */;
 					ProjectRef = 763574DB2F93A6AD008029DF /* TicketApp.xcodeproj */;
+				},
+				{
+					ProductGroup = 7637BC042FE88D110055AE66 /* Products */;
+					ProjectRef = 7637BC012FE88D110055AE66 /* TicketApp.xcodeproj */;
 				},
 				{
 					ProductGroup = 76AC38642F780111006E751F /* Products */;
 					ProjectRef = 76AC38622F780111006E751F /* TicketApp.xcodeproj */;
 				},
 				{
-					ProductGroup = 7618D2972F699BA800AD0DDC /* Products */;
-					ProjectRef = 7618D2952F699BA800AD0DDC /* TicketApp.xcodeproj */;
-				},
-				{
-					ProductGroup = 768C29682F699834008B6D52 /* Products */;
-					ProjectRef = 768C29672F699834008B6D52 /* TicketApp.xcodeproj */;
+					ProductGroup = 76E4DFCD2F9A6E8600A50F49 /* Products */;
+					ProjectRef = 76E4DFCA2F9A6E8600A50F49 /* TicketApp.xcodeproj */;
 				},
 				{
 					ProductGroup = 76E55D482F699866000B42B7 /* Products */;
@@ -182,6 +220,38 @@
 				{
 					ProductGroup = 762E051E2F8D5CC400F2D011 /* Products */;
 					ProjectRef = 762E051C2F8D5CC400F2D011 /* TicketApp.xcodeproj */;
+				},
+				{
+					ProductGroup = 769803772F9B7D51004D9925 /* Products */;
+					ProjectRef = 769803742F9B7D51004D9925 /* TicketApp.xcodeproj */;
+				},
+				{
+					ProductGroup = 768C29B02F69984C008B6D52 /* Products */;
+					ProjectRef = 768C29AD2F69984C008B6D52 /* TicketApp.xcodeproj */;
+				},
+				{
+					ProductGroup = 7618D2972F699BA800AD0DDC /* Products */;
+					ProjectRef = 7618D2952F699BA800AD0DDC /* TicketApp.xcodeproj */;
+				},
+				{
+					ProductGroup = 76D095072FB3BDFE00D38F1B /* Products */;
+					ProjectRef = 76D095042FB3BDFE00D38F1B /* TicketApp.xcodeproj */;
+				},
+				{
+					ProductGroup = 768C29682F699834008B6D52 /* Products */;
+					ProjectRef = 768C29672F699834008B6D52 /* TicketApp.xcodeproj */;
+				},
+				{
+					ProductGroup = 7605F2ED2FE7E42200EBC909 /* Products */;
+					ProjectRef = 7605F2EA2FE7E42200EBC909 /* TicketApp.xcodeproj */;
+				},
+				{
+					ProductGroup = 766A39B92F9A6B6F0007010A /* Products */;
+					ProjectRef = 766A39B62F9A6B6F0007010A /* TicketApp.xcodeproj */;
+				},
+				{
+					ProductGroup = 76EFBC692FE93B3500759C33 /* Products */;
+					ProjectRef = 76EFBC662FE93B3500759C33 /* TicketApp.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -346,6 +416,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -378,6 +449,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

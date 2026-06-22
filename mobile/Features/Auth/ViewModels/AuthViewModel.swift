@@ -35,6 +35,7 @@ class AuthViewModel: ObservableObject {
                 UserDefaults.standard.set(response.user.id, forKey: "userId")
                 UserDefaults.standard.set(response.user.name, forKey: "userName")
                 UserDefaults.standard.set(response.user.email, forKey: "userEmail")
+                UserDefaults.standard.set(response.user.isAdmin ?? false, forKey: "isAdmin")
                 self.isLoggedIn = true
                 self.isLoading = false
                 

@@ -21,4 +21,7 @@ public class User
 
     [Required]
     public string PasswordHash { get; set; }
+
+    // Yönetici mi? Admin paneline erişimi bu alan belirler.
+    public bool IsAdmin { get; set; } = false;
 }

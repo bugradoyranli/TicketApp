@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using TicketApp.Api.Data;
@@ -11,9 +12,11 @@ using TicketApp.Api.Data;
 namespace TicketApp.Api.Migrations
 {
     [DbContext(typeof(TicketAppDbContext))]
-    partial class TicketAppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260621112111_AddSectionsAndSeating")]
+    partial class AddSectionsAndSeating
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -235,9 +238,6 @@ namespace TicketApp.Api.Migrations
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("text");
-
-                    b.Property<bool>("IsAdmin")
-                        .HasColumnType("boolean");
 
                     b.Property<string>("Name")
                         .IsRequired()

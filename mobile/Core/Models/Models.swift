@@ -58,6 +58,7 @@ struct UserData: Codable {
         let name: String
         let surname: String
         let email: String
+        let isAdmin: Bool?   // backend her zaman döner; eski yanıtlara karşı opsiyonel
 }
 
 struct UserResponse: Codable {

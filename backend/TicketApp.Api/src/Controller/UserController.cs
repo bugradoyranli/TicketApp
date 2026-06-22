@@ -44,7 +44,8 @@ public class UserController : ControllerBase
             id= user.Id,
             name= user.Name,
             surname= user.Surname,
-            email= user.Email
+            email= user.Email,
+            isAdmin= user.IsAdmin
         }});
     }
 

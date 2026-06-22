@@ -26,7 +26,9 @@ public class JwtService : IJwtService
             new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
             new Claim(ClaimTypes.Email, user.Email),
             new Claim(ClaimTypes.Name, user.Name),
-            new Claim("Surname", user.Surname) // Özel claim
+            new Claim("Surname", user.Surname), // Özel claim
+            // Rol claim'i: admin uçları [Authorize(Roles="Admin")] ile bunu kontrol eder.
+            new Claim(ClaimTypes.Role, user.IsAdmin ? "Admin" : "User")
         };
 
         var token = new JwtSecurityToken(
