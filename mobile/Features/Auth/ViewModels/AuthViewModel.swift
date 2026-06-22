@@ -28,10 +28,11 @@ class AuthViewModel: ObservableObject {
             do {
                 // Try await ile tek satırda sonucu alıyoruz
                 let response: LoginResponse = try await NetworkManager.shared.request(endpoint: "/User/login", method: "POST", body: jsonData)
-                
+                self.authToken = response.token   // @AppStorage("authToken") otomatik UserDefaults'a yazar
                 print("Güvenlik Anahtarı: \(response.token)")
                 
                 // Bilgileri kaydetme (Profil sayfasında göstermek için)
+                UserDefaults.standard.set(response.user.id, forKey: "userId")
                 UserDefaults.standard.set(response.user.name, forKey: "userName")
                 UserDefaults.standard.set(response.user.email, forKey: "userEmail")
                 self.isLoggedIn = true
@@ -59,7 +60,7 @@ class AuthViewModel: ObservableObject {
         isRegistered = false // Resetle
         if !isValidEmail(email) {
             self.errorMessage = "Lütfen geçerli bir e-posta adresi giriniz."
-            
+        }
             
             let bodyData = [
                 "email": email,
@@ -89,6 +90,6 @@ class AuthViewModel: ObservableObject {
                     self.isLoading = false
                 }
             }
-        }
+        
     }
 }

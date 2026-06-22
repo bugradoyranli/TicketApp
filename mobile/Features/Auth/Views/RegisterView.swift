@@ -48,7 +48,7 @@ struct RegisterView: View {
                         .opacity(viewModel.isValidEmail(viewModel.email) ? 1.0 : 0.5)
                         .frame(maxWidth: .infinity)
                         .padding()
-                        .background(.purple)
+                        .background(Color.bordo)
                         .foregroundStyle(.white)
                         .cornerRadius(12)
                         .padding(.horizontal)

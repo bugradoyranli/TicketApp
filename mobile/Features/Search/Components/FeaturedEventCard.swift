@@ -3,21 +3,19 @@ import SwiftUI
 
 
 struct FeaturedEventCard: View {
-    let event: FeaturedEvent     
-
+    let event: Event
     var body: some View {
         ZStack(alignment: .bottomLeading) {
 
-         
             LinearGradient(
-                colors: event.gradientColors,
+                colors: [Color.bordo, Color.bordo.opacity(0.78)],
                 startPoint: .topLeading,
                 endPoint: .bottomTrailing
             )
 
             // --- Dekoratif Daireler ---
             Circle()
-                .fill(.white.opacity(0.05))
+                .fill(.white.opacity(0.18))
                 .frame(width: 200, height: 200)
                 .offset(x: 220, y: -60)
 
@@ -31,34 +29,37 @@ struct FeaturedEventCard: View {
                 Spacer()
 
                 // Tarih badge'i
-                Text(event.date)
+                Text(event.date.toTurkishDate())
                     .font(.caption.weight(.semibold))
                     .padding(.horizontal, 10)
                     .padding(.vertical, 5)
-                    .background(.white.opacity(0.2))
+                    .background(.white)
                     .clipShape(Capsule())
-                    .foregroundStyle(.white)
+                    .foregroundStyle(Color.bordo)
 
-                Text(event.title)
+                Text(event.name)
                     .font(.title2.bold())
                     .foregroundStyle(.white)
 
-                Text(event.subtitle)
+                Text(event.venueName)
                     .font(.subheadline)
-                    .foregroundStyle(.white.opacity(0.8))
+                    .foregroundStyle(.white.opacity(0.85))
 
                 // Bilet Al butonu sağa yaslanmış
                 HStack {
+                    if let price = event.price {
+                        Text("\(Int(price))₺").bold().foregroundStyle(.white)
+                    }
                     Spacer()
-                    Button {
-                        
+                    NavigationLink {
+                        SeatSelectionView(event: event)
                     } label: {
                         Text("Bilet Al")
                             .font(.subheadline.bold())
-                            .padding(.horizontal, 20)
+                            .foregroundStyle(Color.bordo)
+                            .padding(.horizontal, 14)
                             .padding(.vertical, 10)
                             .background(.white)
-                            .foregroundStyle(event.gradientColors[0])
                             .clipShape(Capsule())
                     }
                 }
@@ -68,14 +69,8 @@ struct FeaturedEventCard: View {
         }
         .frame(height: 200)
         .clipShape(RoundedRectangle(cornerRadius: 24))
-        // Kartın kendi renginde gölge — daha canlı görünüm için
-        .shadow(color: event.gradientColors[0].opacity(0.4), radius: 16, y: 8)
+        .shadow(color: Color.bordo.opacity(0.25), radius: 12, y: 6)
     }
-}
-
-#Preview {
-    FeaturedEventCard(event: featuredEvents[0])
-        .padding()
 }
 
 

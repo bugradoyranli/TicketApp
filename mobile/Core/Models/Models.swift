@@ -3,11 +3,29 @@ import SwiftUI
 // MARK: - Category
 
 
-struct Category: Identifiable {
-    let id = UUID()
-    let name: String   
-    let icon: String    // SF Symbols icon name
-    let color: Color
+struct Category: Codable, Identifiable {
+    let id: Int
+    let name: String
+    let icon: String // SFSymbol ismi gelecek (örn: "film", "sportscourt")
+    
+    // JSON'daki büyük harf ID'yi Swift'teki küçük harf id'ye eşlemek için
+    enum CodingKeys: String, CodingKey {
+        case id = "id"
+        case name = "name"
+        case icon = "icon"
+    }
+}
+
+
+struct Event: Codable, Identifiable {
+    let id: Int
+    let name: String
+    let description: String?
+    let date: String
+    let venueName: String
+    let price: Double?
+    let imageUrl: String?
+    let city: String?
 }
 
 // MARK: - FeaturedEvent

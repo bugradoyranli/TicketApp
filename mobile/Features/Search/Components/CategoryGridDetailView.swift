@@ -1,49 +1,65 @@
 import SwiftUI
-struct CategoryDetailView: View {
+struct CategoryGridDetailView: View {
     let category: Category
+    @StateObject private var viewModel = EventViewModel()
+    @State private var filter = EventFilter()
+    @State private var showFilter = false
     
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 20) {
-             
+                
+                
                 HStack {
-                    Image(systemName: category.icon)
-                        .font(.largeTitle)
-                        .foregroundStyle(category.color)
                     Text("\(category.name) Etkinlikleri")
                         .font(.title.bold())
+                    Spacer()
+                    FilterButton(activeCount: filter.activeCount) { showFilter = true }
                 }
                 .padding(.horizontal)
-
-              
-                ForEach(0..<10, id: \.self) { i in
-                    HStack(spacing: 12) {
-                        RoundedRectangle(cornerRadius: 12)
-                            .fill(category.color.opacity(0.1))
-                            .frame(width: 60, height: 60)
-                            .overlay(Image(systemName: category.icon).foregroundStyle(category.color))
-
-                        VStack(alignment: .leading) {
-                            Text("\(category.name) Etkinliği \(i + 1)")
-                                .font(.headline)
-                            Text("Tarih: \(10 + i) Mayıs 2026") 
-                                .font(.subheadline)
-                                .foregroundStyle(.secondary)
+                
+                if viewModel.isLoading {
+                    ProgressView()
+                        .frame(maxWidth: .infinity)
+                        .padding(.top, 50)
+                }
+                else if viewModel.eventsByCategory.isEmpty {
+                    ContentUnavailableView(
+                        "Etkinlik Bulunamadı",
+                        systemImage: "calendar.badge.exclamationmark",
+                        description: Text("Bu kategoride şu an aktif bir etkinlik bulunmuyor.")
+                    )
+                    .padding(.top, 50)
+                }
+                else{
+                    let shown = filter.apply(to: viewModel.eventsByCategory)
+                    if shown.isEmpty {
+                        ContentUnavailableView(
+                            "Sonuç Yok",
+                            systemImage: "line.3.horizontal.decrease",
+                            description: Text("Seçtiğin filtrelere uyan etkinlik bulunamadı.")
+                        )
+                        .padding(.top, 50)
+                    } else {
+                        // Etkinlik Listesi
+                        ForEach(shown) { event in
+                            NavigationLink(destination: SeatSelectionView(event: event)) {
+                                EventRowCard(event: event) // Yatay küçük kart tasarımı
+                            }
                         }
-                        
-                        Spacer()
-                        
-                        Text("\(250 + i * 20)₺")
-                            .font(.subheadline.bold())
+                        .padding(.horizontal)
                     }
-                    .padding()
-                    .background(Color(.systemGray6))
-                    .cornerRadius(15)
-                    .padding(.horizontal)
                 }
             }
         }
+            .task {
+                // Sayfa açıldığında backend'i tetikler
+                await viewModel.fetchEventsByCategory(categoryId: category.id)
+            }
         .navigationTitle(category.name)
         .navigationBarTitleDisplayMode(.inline)
+        .sheet(isPresented: $showFilter) {
+            FilterView(events: viewModel.eventsByCategory, filter: $filter)
+        }
     }
 }

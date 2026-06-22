@@ -12,17 +12,20 @@ struct LoginView: View {
                 VStack(spacing: 15) {
                     Image(systemName: "ticket.fill")
                         .font(.system(size: 70))
-                        .foregroundStyle(.purple)
+                        .foregroundStyle(Color.bordo)
                         .padding()
-                        .background(.purple.opacity(0.1))
+                        .background(Color.bordo.opacity(0.12))
                         .clipShape(Circle())
+                        .overlay(
+                            Circle().stroke(.white, lineWidth: 3)
+                        )
                     
                     Text("TicketApp")
                         .font(.largeTitle.bold())
                 }
                 
                 // Form Alanı
-                VStack(spacing: 15) {
+                VStack(spacing: 25) {
                     TextField("E-posta", text: $viewModel.email)
                         .padding()
                         .background(Color(.systemGray6))
@@ -56,7 +59,7 @@ struct LoginView: View {
                     }
                     .frame(maxWidth: .infinity)
                     .padding()
-                    .background(.purple)
+                    .background(Color.bordo)
                     .foregroundStyle(.white)
                     .cornerRadius(12)
                 }
@@ -66,7 +69,7 @@ struct LoginView: View {
                 NavigationLink(destination: RegisterView()) {
                     Text("Hesabın yok mu? **Hemen Kayıt Ol**")
                         .font(.footnote)
-                        .foregroundStyle(.purple)
+                        .foregroundStyle(Color.bordo)
                         .frame(maxWidth: .infinity) // Genişliği yayar
                         .padding(.vertical, 10)     // Tıklama alanını dikeyde büyütür
                         .contentShape(Rectangle())
